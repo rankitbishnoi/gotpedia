@@ -1,0 +1,1 @@
+var myapp = angular.module("got",['ui.bootstrap','ui.router']);

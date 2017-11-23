@@ -1,0 +1,14 @@
+body {
+	background-color: black;
+}
+
+.navbar-default {
+	background-color: #244D96;
+	border-color: #244D96;
+	background: url(../img/nav.jpg);
+	background-size: cover;
+}
+
+#home {
+	background: url(img/back.imh.jpg);
+}
