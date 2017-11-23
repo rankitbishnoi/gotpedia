@@ -13,14 +13,14 @@ body {
 	background: url(../img/back.imh.jpg);
 	background-size: cover;
 	display: table;
-	height: calc(100vh - 8em);
+	height: calc(100vh - 5.1em);
 	width: 100vw;
 }
 
 #child {
 	display: table-cell;
 	vertical-align: middle;
-	color: white;
+	color: hsl(216, 61%, 38%);
 }
 
 #child>h2 {
