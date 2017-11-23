@@ -10,8 +10,6 @@ body {
 }
 
 #home {
-	background: url(../img/back.imh.jpg);
-	background-size: cover;
-	width:100vw;
+	width: 100vw;
 	height: 100vh;
 }
