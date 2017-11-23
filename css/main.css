@@ -13,7 +13,7 @@ body {
 	background: url(../img/back.imh.jpg);
 	background-size: cover;
 	display: table;
-	height: 100vh;
+	height: calc(100vh - 4em);
 	width: 100vw;
 }
 
