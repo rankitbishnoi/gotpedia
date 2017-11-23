@@ -27,3 +27,7 @@ body {
 #child>h2 {
 	white-space: nowrap;
 }
+
+#home button {
+	padding-top: 2em;
+}
