@@ -11,4 +11,5 @@ body {
 
 #home {
 	background: url(../img/back.imh.jpg);
+	background-size: cover;
 }
