@@ -1,1 +1,1 @@
-var myapp = angular.module("got",['ui.bootstrap','ui.router','siyfion.sfTypeahead']);
+var myapp = angular.module("got",['ui.bootstrap','ui.router']);
