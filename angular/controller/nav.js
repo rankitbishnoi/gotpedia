@@ -6,6 +6,9 @@ myapp.controller('CollapseCtrl',['getdata', function (getdata) {
 
 	self.selectedNumber = null;
 
+
+	console.log(getdata.data);
+
   // instantiate the bloodhound suggestion engine
   var numbers = new Bloodhound({
   	datumTokenizer: function(d) { return Bloodhound.tokenizers.whitespace(d.num); },
