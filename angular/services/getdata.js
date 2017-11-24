@@ -7,7 +7,7 @@ myapp.service('getdata', ['$http', function($http){
 	}
 	self.loadAllhouses = function() {
 		for (var i = 1; i <= 45; i++) {
-			$http.get('https://www.anapioficeandfire.com/api/houses').then(function successCallback(response){
+			$http.get('https://www.anapioficeandfire.com/api/houses?page='+i+'&pageSize=10').then(function successCallback(response){
           // this callback will be called asynchronously
           // when the response is available
           self.data.houses = response.data.map(function(house){ return house; });
@@ -22,7 +22,7 @@ myapp.service('getdata', ['$http', function($http){
 
 	self.loadAllbooks = function() {
 		for (var i = 1; i <= 2; i++) {
-			$http.get('https://www.anapioficeandfire.com/api/books').then(function successCallback(response){
+			$http.get('https://www.anapioficeandfire.com/api/books?page='+i+'&pageSize=10').then(function successCallback(response){
           // this callback will be called asynchronously
           // when the response is available
           self.data.books = response.data.map(function(book){ return book; });console.log(response);
