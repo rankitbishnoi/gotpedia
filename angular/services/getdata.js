@@ -22,7 +22,7 @@ myapp.service('getdata', ['$http', function($http){
   	$http.get('https://www.anapioficeandfire.com/api/books').then(function successCallback(response){
           // this callback will be called asynchronously
           // when the response is available
-          self.data.books = response.data.map(function(book){ return book; });console.log(response);
+          self.data.books = response.data.map(function(book){ return book; });
       }, function errorCallback(response) {
           // called asynchronously if an error occurs
           // or server returns response with an error status.
