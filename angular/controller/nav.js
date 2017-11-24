@@ -10,7 +10,6 @@ myapp.controller('CollapseCtrl',['getdata', function (getdata) {
 	getdata.loadAllcharacters();
 	getdata.loadAllbooks();
 	getdata.loadAllhouses();
-	console.log(getdata.data);
 
   // instantiate the bloodhound suggestion engine
   var numbers = new Bloodhound({
