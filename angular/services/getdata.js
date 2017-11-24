@@ -15,7 +15,7 @@ myapp.service('getdata', ['$http', function($http){
           // or server returns response with an error status.
           alert("some error occurred. Check the console.");
           console.log(response);
-      }
+      })
   };
 
   self.loadAllbooks = function() {
@@ -28,7 +28,7 @@ myapp.service('getdata', ['$http', function($http){
           // or server returns response with an error status.
           alert("some error occurred. Check the console.");
           console.log(response);
-      }
+      })
   };
 
   self.loadAllcharacters = function() {
@@ -42,7 +42,7 @@ myapp.service('getdata', ['$http', function($http){
           // or server returns response with an error status.
           alert("some error occurred. Check the console.");
           console.log(response);
-      }
+      })
   };
 
   console.log(self.data);
