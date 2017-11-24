@@ -1,4 +1,4 @@
-myapp.controller('CollapseCtrl', function () {
+myapp.controller('CollapseCtrl','getdata' function (getdata) {
 	var self = this;
 	self.isNavCollapsed = true;
 	self.isCollapsed = false;
