@@ -3,4 +3,5 @@ myapp.controller('TypeaheadCtrl',["getdata", function(getdata){
 	self.data = getdata.self.load();
 
 	self.selected = undefined;
+	self.search = self.data.books;
 }])
