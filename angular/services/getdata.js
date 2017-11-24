@@ -16,9 +16,10 @@ myapp.service('getdata', ['$http', function($http){
           alert("some error occurred. Check the console.");
           console.log(response);
       }
+  };
 
-      self.loadAllbooks = function() {
-      	$http.get('https://www.anapioficeandfire.com/api/books').then(function successCallback(response){
+  self.loadAllbooks = function() {
+  	$http.get('https://www.anapioficeandfire.com/api/books').then(function successCallback(response){
           // this callback will be called asynchronously
           // when the response is available
           self.data.books = response.data.map(function(book){ return book; });
@@ -28,10 +29,11 @@ myapp.service('getdata', ['$http', function($http){
           alert("some error occurred. Check the console.");
           console.log(response);
       }
+  };
 
-      self.loadAllcharacters = function() {
-      	for (var i = 1; i <= 214; i++) {
-      		$http.get('https://www.anapioficeandfire.com/api/characters?page='+i+'&pageSize=10').then(function successCallback(response){
+  self.loadAllcharacters = function() {
+  	for (var i = 1; i <= 214; i++) {
+  		$http.get('https://www.anapioficeandfire.com/api/characters?page='+i+'&pageSize=10').then(function successCallback(response){
           // this callback will be called asynchronously
           // when the response is available
           self.data.characters = response.data.map(function(character){ return character; });
@@ -41,7 +43,7 @@ myapp.service('getdata', ['$http', function($http){
           alert("some error occurred. Check the console.");
           console.log(response);
       }
-  }
+  };
 
   console.log(self.data);
 }])
