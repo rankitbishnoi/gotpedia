@@ -1,11 +1,8 @@
 myapp.controller('TypeaheadCtrl',['getdata', function(getdata){
 	var _selected;
 	var self = this;
-
-	getdata.loadAllhouses();
-	getdata.loadAllbooks();
-	getdata.loadAllcharacters();
+	self.data = getdata.self.load()
 
 	self.selected = undefined;
-	self.search = getdata.data.books;
+	self.search = self.data.books;
 }])
