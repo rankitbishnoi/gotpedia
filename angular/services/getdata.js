@@ -43,7 +43,8 @@ myapp.service('getdata', ['$http', function($http){
           alert("some error occurred. Check the console.");
           console.log(response);
       })
-  };
+  }
+};
 
   console.log(self.data);
 }])
