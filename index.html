@@ -27,7 +27,7 @@
 			<div class="collapse navbar-collapse" uib-collapse="ctrl.isNavCollapsed">
 				<form class="navbar-form navbar-left">
 					<div class="form-group" ng-controller="TypeaheadCtrl as myTypeahead">
-						<input type="text" ng-model="myTypeahead.selected" uib-typeahead="result as result.name for type in result in myTypeahead.search | filter:$viewValue | limitTo:8" class="form-control">
+						<input type="text" ng-model="myTypeahead.selected" uib-typeahead="result as result.name for result in myTypeahead.search | filter:$viewValue | limitTo:8" class="form-control">
 					</div>
 					<button type="submit" class="btn btn-default">Search</button>
 				</form>
