@@ -1,4 +1,5 @@
-myapp.controller('searchController',["$stateParams", function($stateParams){
+myapp.controller('searchController',["$stateParams",'getdata', function($stateParams,getdata){
 	var self = this;
 	self.query = $stateParams.query;
+	
 }])
