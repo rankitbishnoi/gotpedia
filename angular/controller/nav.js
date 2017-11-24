@@ -7,6 +7,9 @@ myapp.controller('CollapseCtrl',['getdata', function (getdata) {
 	self.selectedNumber = null;
 
 
+	getdata.loadAllcharacters();
+	getdata.loadAllbooks();
+	getdata.loadAllhouses();
 	console.log(getdata.data);
 
   // instantiate the bloodhound suggestion engine

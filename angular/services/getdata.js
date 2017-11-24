@@ -50,7 +50,4 @@ myapp.service('getdata', ['$http', function($http){
 		}
 	};
 
-	self.loadAllcharacters();
-	self.loadAllbooks();
-	self.loadAllhouses();
 }])
