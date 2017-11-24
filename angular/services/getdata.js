@@ -47,4 +47,7 @@ myapp.service('getdata', ['$http', function($http){
 };
 
   console.log(self.data);
+  self.loadAllcharacters();
+  self.loadAllbooks();
+  self.loadAllhouses();
 }])
