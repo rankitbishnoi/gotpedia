@@ -2,6 +2,24 @@
 	<div class="text-center" id="child">
 		<h2>Explore to your desires</h2>
 		<h3>Find your favorite house or Character.</h3>
-		<button type="button" class="btn btn-outline-light btn-lg" ui-sref="Search" style="color: black">Get Started</button>		
+		<div class="input-group">
+			<div class="input-group-btn">
+				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{myHome.action}} <span class="caret"></span></button>
+				<ul class="dropdown-menu">
+					<li><a ng-model="mySearch.action">Books</a></li>
+					<li><a ng-model="mySearch.action">Characters</a></li>
+					<li><a ng-model="mySearch.action">Houses</a></li>
+				</ul>
+				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{myHome.filter}} <span class="caret"></span></button>
+				<ul class="dropdown-menu">
+					<li><a>Action</a></li>
+					<li><a>Another action</a></li>
+					<li><a>Something else here</a></li>
+					<li role="separator" class="divider"></li>
+					<li><a>Separated link</a></li>
+				</ul>
+			</div><!-- /btn-group -->
+			<input type="text" class="form-control" aria-label="...">
+		</div><!-- /input-group -->		
 	</div>
 </div>
