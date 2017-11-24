@@ -1,4 +1,4 @@
-myapp.controller('CollapseCtrl','getdata' function (getdata) {
+myapp.controller('CollapseCtrl',['getdata' function (getdata) {
 	var self = this;
 	self.isNavCollapsed = true;
 	self.isCollapsed = false;
@@ -51,4 +51,4 @@ myapp.controller('CollapseCtrl','getdata' function (getdata) {
   self.exampleOptions = {
   	displayKey: 'title'
   };
-});
+}]);
