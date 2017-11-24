@@ -1,9 +1,9 @@
 myapp.service('getdata', ['$http', function($http){
 	var self = this;
 	self.data = {
-		houses : [];
-		characters : [];
-		books : [];
+		houses : [],
+		characters : [],
+		books : []
 	}
 	self.loadAllhouses = function() {
 		$http.get('https://www.anapioficeandfire.com/api/books').then(function successCallback(response){
