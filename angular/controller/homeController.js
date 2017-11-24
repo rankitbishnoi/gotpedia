@@ -1,0 +1,3 @@
+myapp.controller('homeController', [function(){
+
+}]);
