@@ -40,7 +40,7 @@ myapp.service('getdata', ['$http', function($http){
 			$http.get('https://www.anapioficeandfire.com/api/characters?page='+i+'&pageSize=10').then(function successCallback(response){
           // this callback will be called asynchronously
           // when the response is available
-          self.data.characters = response.data.map(function(character){ return character; });
+          self.data.characters = response.data.map(function(character){ return character;  console.log('hi')});
       }, function errorCallback(response) {
           // called asynchronously if an error occurs
           // or server returns response with an error status.
