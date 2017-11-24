@@ -26,8 +26,8 @@
 			</div>
 			<div class="collapse navbar-collapse" uib-collapse="ctrl.isNavCollapsed">
 				<form class="navbar-form navbar-left">
-					<div class="form-group">
-						<input class='typeahead' type="text" sf-typeahead options="ctrl.exampleOptions" datasets="ctrl.numbersDataset" ng-model="ctrl.selectedNumber">
+					<div class="form-group" ng-controller="TypeaheadCtrl as myTypeahead">
+						<input type="text" ng-model="selected" uib-typeahead="result as result.name for result in myTypeahead.search | filter:$viewValue | limitTo:8" class="form-control">
 					</div>
 					<button type="submit" class="btn btn-default">Search</button>
 				</form>
@@ -49,9 +49,6 @@
 	<script type="text/javascript" src="js/angular-touch.js"></script>
 	<script type="text/javascript" src="js/ui-bootstrap-tpls-2.5.0.min.js"></script>
 	<script type="text/javascript" src="js/angular-ui-router.min.js"></script>
-	<script src="js/typeahead.bundle.js"></script>
-	<script src="js/bloodhound.js"></script>
-	<script src="js/angular-typeahead.js"></script>
 	<script type="text/javascript" src="angular/app.js"></script>
 	<script type="text/javascript" src="angular/routing.js"></script>
 
