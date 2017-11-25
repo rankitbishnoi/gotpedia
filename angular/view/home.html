@@ -2,23 +2,34 @@
 	<div class="text-center" id="child" ng-controller="TypeaheadCtrl as myTypeahead">
 		<h2>Explore to your desires</h2>
 		<h3>Find your favorite house or Character.</h3>
-		<div class="input-group">
-			<div class="input-group-btn">
-				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{myHome.action}} <span class="caret"></span></button>
-				<ul class="dropdown-menu">
-					<li><a ng-model="mySearch.action">Books</a></li>
-					<li><a ng-model="mySearch.action">Characters</a></li>
-					<li><a ng-model="mySearch.action">Houses</a></li>
+		<div class="input-group">				
+			<div class="btn-group" uib-dropdown>
+				<button id="split-button" type="button" class="btn btn-danger">Action</button>
+				<button type="button" class="btn btn-danger" uib-dropdown-toggle>
+					<span class="caret"></span>
+					<span class="sr-only">Split button!</span>
+				</button>
+				<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="split-button">
+					<li role="menuitem"><a href="#">Action</a></li>
+					<li role="menuitem"><a href="#">Another action</a></li>
+					<li role="menuitem"><a href="#">Something else here</a></li>
+					<li class="divider"></li>
+					<li role="menuitem"><a href="#">Separated link</a></li>
 				</ul>
-				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{myHome.filter}} <span class="caret"></span></button>
-				<ul class="dropdown-menu">
-					<li><a>Action</a></li>
-					<li><a>Another action</a></li>
-					<li><a>Something else here</a></li>
-					<li role="separator" class="divider"></li>
-					<li><a>Separated link</a></li>
+				<button id="split-button" type="button" class="btn btn-danger">Action</button>
+				<button type="button" class="btn btn-danger" uib-dropdown-toggle>
+					<span class="caret"></span>
+					<span class="sr-only">Split button!</span>
+				</button>
+				<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="split-button">
+					<li role="menuitem"><a href="#">Action</a></li>
+					<li role="menuitem"><a href="#">Another action</a></li>
+					<li role="menuitem"><a href="#">Something else here</a></li>
+					<li class="divider"></li>
+					<li role="menuitem"><a href="#">Separated link</a></li>
 				</ul>
-			</div><!-- /btn-group -->
+
+			</div>
 			<div class="form-group">
 				<input type="text" ng-model="myTypeahead.selected" uib-typeahead="result as result.name for result in myTypeahead.search | filter:$viewValue | limitTo:8"  class="form-control">
 			</div>
