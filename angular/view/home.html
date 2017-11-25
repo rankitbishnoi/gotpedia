@@ -1,5 +1,5 @@
 <div id="home" ng-controller='homeController as myHome'>
-	<div class="text-center" id="child">
+	<div class="text-center" id="child" ng-controller="TypeaheadCtrl as myTypeahead">
 		<h2>Explore to your desires</h2>
 		<h3>Find your favorite house or Character.</h3>
 		<div class="input-group">
@@ -19,7 +19,9 @@
 					<li><a>Separated link</a></li>
 				</ul>
 			</div><!-- /btn-group -->
-			<input type="text" class="form-control" aria-label="...">
+			<div class="form-group">
+				<input type="text" ng-model="myTypeahead.selected" uib-typeahead="result as result.name for result in myTypeahead.search | filter:$viewValue | limitTo:8"  class="form-control">
+			</div>
 		</div><!-- /input-group -->		
 	</div>
 </div>
