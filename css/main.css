@@ -28,6 +28,6 @@ body {
 	white-space: nowrap;
 }
 
-#child>#btn-group {
+#child .btn-group {
 	text-shadow: 0;
 }
