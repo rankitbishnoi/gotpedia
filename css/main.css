@@ -27,3 +27,7 @@ body {
 #child>h2 {
 	white-space: nowrap;
 }
+
+#child>#btn-group {
+	text-shadow: 0;
+}

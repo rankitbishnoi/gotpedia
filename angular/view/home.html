@@ -18,11 +18,11 @@
 					{{myHome.filter}} <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
-					<li>{{myHome.actionDone}}</li>
+					<li style="color: black;">{{myHome.actionDone}}</li>
 					<li role="menuitem" ng-repeat='filter in myHome.filters' ng-click='myHome.filtername($index)'><a>{{filter}}</a></li>
 				</ul>
 			</div>
-			<input type="text" ng-attr-placeholder="{{myHome.actionDone}}" ng-model="myHome.selected" uib-typeahead="result as result.name for result in myHome.search | filter:$viewValue | limitTo:5" class="form-control"> 
+			<input type="text" ng-attr-placeholder="{{myHome.actionDone}}" ng-model="myHome.selected" uib-typeahead="result as result.name for result in myHome.search | filter:$viewValue | limitTo:5" class="form-control" style="color: black;"> 
 		</div>
 	</div>
 </div>
