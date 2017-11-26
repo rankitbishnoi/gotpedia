@@ -10,13 +10,11 @@ myapp.service('getdata', ['$http', function($http){
 			$http.get('https://www.anapioficeandfire.com/api/houses?page='+i+'&pageSize=10').then(function successCallback(response){
           // this callback will be called asynchronously
           // when the response is available
-          var obj = {
-          	"url" : " ",
-          	"name" : " "
-          };
-          response.data.forEach(function(house){
-          	obj.url = house.url;
-          	obj.name = house.name;
+          response.data.forEach(function(house){          	
+          	var obj = {
+          		"url" : house.url,
+          		"name" : house.name
+          	};
           	self.data.houses.push(obj);
           });
       }, function errorCallback(response) {
@@ -33,13 +31,11 @@ myapp.service('getdata', ['$http', function($http){
 			$http.get('https://www.anapioficeandfire.com/api/books?page='+i+'&pageSize=10').then(function successCallback(response){
           // this callback will be called asynchronously
           // when the response is available
-          var obj = {
-          	"url" : " ",
-          	"name" : " "
-          };
           response.data.forEach(function(book){
-          	obj.url = house.url;
-          	obj.name = house.name;
+          	var obj = {
+          		"url" : book.url,
+          		"name" : book.name
+          	};
           	self.data.books.push(obj); 
           });
       }, function errorCallback(response) {
@@ -56,13 +52,11 @@ myapp.service('getdata', ['$http', function($http){
 			$http.get('https://www.anapioficeandfire.com/api/characters?page='+i+'&pageSize=10').then(function successCallback(response){
           // this callback will be called asynchronously
           // when the response is available
-          var obj = {
-          	"url" : " ",
-          	"name" : " "
-          };
           response.data.forEach(function(character){ 
-          	obj.url = house.url;
-          	obj.name = house.name;
+          	var obj = {
+          		"url" : character.url,
+          		"name" : character.name
+          	};
           	self.data.characters.push(obj);
           });
       }, function errorCallback(response) {
