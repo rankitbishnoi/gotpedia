@@ -21,7 +21,7 @@ myapp.service('getdata', ['$http', function($http){
           // called asynchronously if an error occurs
           // or server returns response with an error status.
           alert("some error occurred. Check the console.");
-          console.log(response); break;
+          console.log(response);
       })
 		};
 	};
