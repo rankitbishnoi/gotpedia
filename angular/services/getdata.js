@@ -81,4 +81,6 @@ myapp.service('getdata', ['$http', function($http){
 		return self.data;
 	}
 
+	console.log(self.data);
+
 }])
