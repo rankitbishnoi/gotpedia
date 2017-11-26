@@ -2,7 +2,7 @@
 	<div class="text-center" id="child">
 		<h2>Explore to your desires</h2>
 		<h3>Find your favorite house or Character.</h3>		
-		<div class="input-group" uib-dropdown id="btn-group">
+		<div class="input-group center-block" uib-dropdown id="btn-group" style="width: 50%;">
 			<div class="input-group-btn" uib-dropdown is-open="status.isopen">
 				<button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
 					{{myHome.action}} <span class="caret"></span>
@@ -13,7 +13,7 @@
 					<li role="menuitem"><a ng-click='myHome.buttonName("Characters")'>Characters</a></li>
 				</ul>
 			</div>
-			<input type="text" placeholder="Search" ng-model="myHome.selected" uib-typeahead="result as result.name for result in myHome.search | filter:$viewValue | limitTo:5" class="form-control" style="color: black;"> 
+			<input type="text" placeholder="Search" ng-model="myHome.selected" uib-typeahead="result as result.name for result in myHome.search | filter:$viewValue | limitTo:5" class="form-control" style="color: black; width: 70%;"> 
 			<button type="button" class="btn btn-default" ui-sref= 'search({q : myHome.selected.url})'>Search</button>
 		</div>
 	</div>
