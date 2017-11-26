@@ -36,5 +36,8 @@ body {
 
 #searchInput {
 	color: black;
-	width: 70%;
+}
+
+#searchbtn {
+	margin-top: 2em;
 }

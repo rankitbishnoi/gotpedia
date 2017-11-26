@@ -15,6 +15,6 @@
 			</div>
 			<input type="text" placeholder="Search" ng-model="myHome.selected" uib-typeahead="result as result.name for result in myHome.search | filter:$viewValue | limitTo:5" class="form-control" id="searchInput"> 
 		</div>
-		<button type="button" class="btn btn-default center-block" ui-sref= 'search({q : myHome.selected.url})'>Search</button>
+		<button type="button" class="btn btn-default center-block" ui-sref= 'search({q : myHome.selected.url})' id="searchbtn">Search</button>
 	</div>
 </div>
