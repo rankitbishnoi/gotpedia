@@ -3,6 +3,7 @@ myapp.controller('homeController', ["getdata", function(getdata){
 	self.action = "Books";
 	self.data = getdata.load();
 	self.selected = undefined;
+	self.search = self.data.books;
 
 	self.buttonName = function(name) {
 		self.action = name;
