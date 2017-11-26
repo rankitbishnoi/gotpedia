@@ -31,3 +31,7 @@ body {
 #btn-group {
 	text-shadow: 0px 0px 0px;
 }
+
+input {
+	width: 100%;
+}
