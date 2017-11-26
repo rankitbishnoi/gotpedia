@@ -11,8 +11,8 @@ myapp.service('getdata', ['$http', function($http){
           // this callback will be called asynchronously
           // when the response is available
           var obj = {
-          	"url" = "",
-          	"name" = ""
+          	"url" = " ",
+          	"name" = " "
           };
           response.data.forEach(function(house){
           	obj.url = house.url;
@@ -34,8 +34,8 @@ myapp.service('getdata', ['$http', function($http){
           // this callback will be called asynchronously
           // when the response is available
           var obj = {
-          	"url" = "",
-          	"name" = ""
+          	"url" = " ",
+          	"name" = " "
           };
           response.data.forEach(function(book){
           	obj.url = house.url;
@@ -57,8 +57,8 @@ myapp.service('getdata', ['$http', function($http){
           // this callback will be called asynchronously
           // when the response is available
           var obj = {
-          	"url" = "",
-          	"name" = ""
+          	"url" = " ",
+          	"name" = " "
           };
           response.data.forEach(function(character){ 
           	obj.url = house.url;
