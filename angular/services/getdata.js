@@ -67,7 +67,7 @@ myapp.service('getdata', ['$http', function($http){
       })
 		}
 	};
-	
+
 	self.loadAllhouses();
 	self.loadAllcharacters();
 	self.loadAllbooks();
@@ -75,7 +75,5 @@ myapp.service('getdata', ['$http', function($http){
 	self.load = function(){
 		return self.data;
 	}
-
-	console.log(self.data);
 
 }])
