@@ -7,7 +7,6 @@ myapp.controller('searchController',["$stateParams",'searchgetdata', function($s
 	self.action = "Books";
 	self.data = searchgetdata.loadAllbooks();
 	self.selected = undefined;
-	self.search = self.data;
 	self.filterVisibility = true;
 	self.filter = [];
 
