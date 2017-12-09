@@ -7,15 +7,22 @@ myapp.controller('searchController',["$stateParams",'getdata', function($statePa
 	self.data = getdata.load();
 	self.selected = undefined;
 	self.search = self.data.books;
+	self.filters = [];
+
 
 	self.buttonName = function(name) {
 		self.action = name;
 		if (name === "Books") {		
 			self.search = self.data.books;
+			self.filterVisibility = true;
 		}else if (name === "Characters") {		
-			self.search = self.data.characters;
+			self.search = self.data.characters;			
+			self.filterVisibility = false;
+			self.filters = ["Gender", "Culture", "IsAlve"];
 		}else if (name === "Houses") {		
 			self.search = self.data.houses;
+			self.filterVisibility = false;
+			self.filters = ["Region", "HasWords", "HasTitles" , "HasAncestoralWeapons", "HasDiedOut"];
 		} else {
 
 		};

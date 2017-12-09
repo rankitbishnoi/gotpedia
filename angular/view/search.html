@@ -12,7 +12,7 @@
 					<li role="menuitem"><a ng-click='mySearch.buttonName("Characters")'>Characters</a></li>
 				</ul>
 			</div>
-			<div class="input-group-btn" uib-dropdown is-open="status.isopen">
+			<div class="input-group-btn" uib-dropdown is-open="status.isopen" ng-hide="mySearch.filterVisibility">
 				<button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
 					{{mySearch.filter}} <span class="caret"></span>
 				</button>
