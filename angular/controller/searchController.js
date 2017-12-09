@@ -7,7 +7,10 @@ myapp.controller('searchController',["$stateParams",'getdata', function($statePa
 	self.data = getdata.load();
 	self.selected = undefined;
 	self.search = self.data.books;
+	self.filterVisibility = true;
 	self.filters = [];
+
+	self.Filtersettings = { checkBoxes: true, };
 
 
 	self.buttonName = function(name) {
