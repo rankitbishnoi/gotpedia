@@ -22,10 +22,12 @@ myapp.controller('searchController',["$stateParams",'getdata', function($statePa
 			self.search = self.data.characters;			
 			self.filterVisibility = false;
 			self.filters = [{ id: 1 , label: "Male"}, { id: 2, label: "Female"}, { id: 3, label: "Culture"}, { id: 4, label: "IsAlve"}];
+			self.filter = [];
 		}else if (name === "Houses") {		
 			self.search = self.data.houses;
 			self.filterVisibility = false;
 			self.filters = [{ id: 1, label: "HasWords"}, { id: 2, label: "HasTitles"}, { id: 3, label: "HasAncestoralWeapons"}, { id: 4, label: "HasDiedOut"}];
+			self.filter = [];
 		} else {
 
 		};
