@@ -48,6 +48,10 @@ body {
 	color: black;
 }
 
+#search {
+	background: url(../img/map.jpg);
+}
+
 #search #single-button {
 	margin-top: 8px;
 	margin-bottom: 8px;
