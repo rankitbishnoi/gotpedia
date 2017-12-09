@@ -18,15 +18,18 @@ myapp.controller('searchController',["$stateParams",'searchgetdata', function($s
 		self.action = name;
 		if (name === "Books") {					
 			self.data = searchgetdata.loadAllbooks();
+			self.typeahead = self.data;
 			self.filterVisibility = true;
 			self.filter = [];
 		}else if (name === "Characters") {
-			self.data = searchgetdata.loadAllcharacters(self.query);			
+			self.data = searchgetdata.loadAllcharacters(self.query);
+			self.typeahead = self.data;			
 			self.filterVisibility = false;
 			self.filters = [{ id: 1 , label: "Male"}, { id: 2, label: "Female"}, { id: 3, label: "IsAlve"}];
 			self.filter = [];
 		}else if (name === "Houses") {		
 			self.data = searchgetdata.loadAllhouses(self.query);	
+			self.typeahead = self.data;
 			self.filterVisibility = false;
 			self.filters = [{ id: 1, label: "HasWords"}, { id: 2, label: "HasTitles"}, { id: 3, label: "HasAncestoralWeapons"}, { id: 4, label: "HasDiedOut"}];
 			self.filter = [];
@@ -50,6 +53,7 @@ myapp.controller('searchController',["$stateParams",'searchgetdata', function($s
 			});
 
 			self.data = searchgetdata.loadAllcharacters(self.query);
+			self.typeahead = self.data;
 		}
 
 		if (self.action === "Houses") {
@@ -67,6 +71,7 @@ myapp.controller('searchController',["$stateParams",'searchgetdata', function($s
 			});
 
 			self.data = searchgetdata.loadAllhouses(self.query);	
+			self.typeahead = self.data;
 		}
 
 
