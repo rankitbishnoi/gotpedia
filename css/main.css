@@ -57,6 +57,6 @@ body {
 	margin-bottom: 8px;
 }
 
-#thumbnail {
-	margin-bottom: 1em;
+#thumbnail h5{
+	white-space: nowrap;
 }
