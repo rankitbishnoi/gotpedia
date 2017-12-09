@@ -24,8 +24,6 @@ myapp.controller('homeController', ["getdata", function(getdata){
 		isopen: false
 	};
 
-
-
 	self.toggleDropdown = function($event) {
 		$event.preventDefault();
 		$event.stopPropagation();
