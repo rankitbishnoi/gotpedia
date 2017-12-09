@@ -1,8 +1,8 @@
 myapp.service('searchgetdata', ['$http', function($http){
 	var self = this;
-	self.data = [];
 
 	self.loadAllbooks = function() {
+		self.data = [];
 		for (var i = 1; i <= 2; i++) {
 			$http.get('https://www.anapioficeandfire.com/api/books?page='+i+'&pageSize=10').then(function successCallback(response){
           // this callback will be called asynchronously
@@ -25,6 +25,7 @@ myapp.service('searchgetdata', ['$http', function($http){
 	};
 
 	self.loadAllcharacters = function(query) {
+		self.data = [];
 
 		for(let i = 1; i <= 214; i++){
 			$http.get('https://www.anapioficeandfire.com/api/characters?page='+i+'&pageSize=10'+query).then(function successCallback(response){
@@ -50,6 +51,7 @@ myapp.service('searchgetdata', ['$http', function($http){
 	};
 
 	self.loadAllhouses = function(query) {
+		self.data = [];
 
 		for(let i = 1; i <= 45; i++){
 			$http.get('https://www.anapioficeandfire.com/api/houses?page='+i+'&pageSize=10'+query).then(function successCallback(response){
