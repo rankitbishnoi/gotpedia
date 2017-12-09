@@ -1,4 +1,4 @@
-myapp.controller('searchController',["$stateParams",'searchgetdata', function($stateParams,getdata){
+myapp.controller('searchController',["$stateParams",'searchgetdata', function($stateParams,searchgetdata){
 	var self = this;
 	self.input = $stateParams.q;	
 	self.query = "&";
@@ -63,7 +63,7 @@ myapp.controller('searchController',["$stateParams",'searchgetdata', function($s
 					if (counter > 0) { self.query = self.query + "&hasDiedOut=true"; counter++;} else { self.query = self.query + "hasDiedOut=true"; counter++;}
 				}
 			});
-			
+
 			self.data = searchgetdata.loadAllhouses(self.query);	
 		}
 
