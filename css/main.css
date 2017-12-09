@@ -41,3 +41,14 @@ body {
 #searchbtn {
 	margin-top: 2em;
 }
+
+#filterbtn {
+	margin-top: 8px;
+	margin-bottom: 8px;
+	color: black;
+}
+
+#single-button {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
