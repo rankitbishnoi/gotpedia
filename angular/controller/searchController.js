@@ -15,8 +15,10 @@ myapp.controller('searchController',["$stateParams",'searchgetdata', function($s
 
 	self.buttonName = function(name) {
 		self.action = name;
-		if (name === "Books") {		
+		if (name === "Books") {					
+			self.data = searchgetdata.loadAllbooks();
 			self.filterVisibility = true;
+			self.filter = [];
 		}else if (name === "Characters") {
 			self.data = searchgetdata.loadAllcharacters(self.query);			
 			self.filterVisibility = false;

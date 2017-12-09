@@ -21,6 +21,7 @@ myapp.service('searchgetdata', ['$http', function($http){
           console.log(response);
       })
 		}
+		return self.data;
 	};
 
 	self.loadAllcharacters = function(query) {
@@ -45,6 +46,7 @@ myapp.service('searchgetdata', ['$http', function($http){
           console.log(response);
       })
 		}
+		return self.data;
 	};
 
 	self.loadAllhouses = function(query) {
@@ -69,5 +71,6 @@ myapp.service('searchgetdata', ['$http', function($http){
           console.log(response);
       })
 		}
+		return self.data;
 	};
 }])
