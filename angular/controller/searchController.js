@@ -21,11 +21,11 @@ myapp.controller('searchController',["$stateParams",'getdata', function($statePa
 		}else if (name === "Characters") {		
 			self.search = self.data.characters;			
 			self.filterVisibility = false;
-			self.filters = ["Gender", "Culture", "IsAlve"];
+			self.filters = [{ id: 1 , label: "Gender"}, { id: 2, label: "Culture"}, { id: 3, label: "IsAlve"}];
 		}else if (name === "Houses") {		
 			self.search = self.data.houses;
 			self.filterVisibility = false;
-			self.filters = ["Region", "HasWords", "HasTitles" , "HasAncestoralWeapons", "HasDiedOut"];
+			self.filters = [{ id: 1, label: "Region"}, { id: 2, label: "HasWords"}, { id: 2, label: "HasTitles"}, { id: 4, label: "HasAncestoralWeapons"}, { id: 5, label: "HasDiedOut"}];
 		} else {
 
 		};
