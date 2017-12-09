@@ -8,7 +8,7 @@ myapp.controller('searchController',["$stateParams",'getdata', function($statePa
 	self.selected = undefined;
 	self.search = self.data.books;
 	self.filterVisibility = true;
-	self.filters = [];
+	self.filter = [];
 
 	self.Filtersettings = { checkBoxes: true, };
 
