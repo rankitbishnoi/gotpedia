@@ -1,7 +1,7 @@
 <div id="search" ng-controller="searchController as mySearch">
 	<div class="container">
 		<h2>Search : {{mySearch.query}} </h2>
-		<nav class="navbar navbar-inverse">
+		<nav class="navbar navbar-inverse" style="display: inline-block;">
 			<div class="input-group-btn" uib-dropdown is-open="status.isopen">
 				<button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
 					{{mySearch.action}} <span class="caret"></span>
@@ -11,14 +11,15 @@
 					<li role="menuitem"><a ng-click='mySearch.buttonName("Houses")'>Houses</a></li>
 					<li role="menuitem"><a ng-click='mySearch.buttonName("Characters")'>Characters</a></li>
 				</ul>
+				<div ng-dropdown-multiselect="" options="mySearch.filters" selected-model="mySearch.filter" extra-settings="mySearch.Filtersettings"  ng-hide="mySearch.filterVisibility" style="color: black"> </div>
+				<form class="navbar-form navbar-left">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Search">
+					</div>
+					<button type="submit" class="btn btn-default">Search</button>
+				</form>
 			</div>
-			<div ng-dropdown-multiselect="" options="mySearch.filters" selected-model="mySearch.filter" extra-settings="mySearch.Filtersettings"  ng-hide="mySearch.filterVisibility" style="color: black"> </div>
-			<form class="navbar-form navbar-left">
-				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Search">
-				</div>
-				<button type="submit" class="btn btn-default">Search</button>
-			</form>
+			
 		</nav>
 		<div><p>{{mySearch.filter}}</p></div>
 
