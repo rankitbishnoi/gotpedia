@@ -1,12 +1,13 @@
-myapp.controller('searchController',["$stateParams",'getdata', function($stateParams,getdata){
+myapp.controller('searchController',["$stateParams",'searchgetdata', function($stateParams,getdata){
 	var self = this;
-	self.query = $stateParams.q;
+	self.input = $stateParams.q;	
+	self.query = "&";
 
 
 	self.action = "Books";
-	self.data = getdata.load();
+	self.data = searchgetdata.loadAllbooks();
 	self.selected = undefined;
-	self.search = self.data.books;
+	self.search = self.data;
 	self.filterVisibility = true;
 	self.filter = [];
 
@@ -16,21 +17,57 @@ myapp.controller('searchController',["$stateParams",'getdata', function($statePa
 	self.buttonName = function(name) {
 		self.action = name;
 		if (name === "Books") {		
-			self.search = self.data.books;
 			self.filterVisibility = true;
-		}else if (name === "Characters") {		
-			self.search = self.data.characters;			
+		}else if (name === "Characters") {
+			self.data = searchgetdata.loadAllcharacters(self.query);			
 			self.filterVisibility = false;
-			self.filters = [{ id: 1 , label: "Male"}, { id: 2, label: "Female"}, { id: 3, label: "Culture"}, { id: 4, label: "IsAlve"}];
+			self.filters = [{ id: 1 , label: "Male"}, { id: 2, label: "Female"}, { id: 3, label: "IsAlve"}];
 			self.filter = [];
 		}else if (name === "Houses") {		
-			self.search = self.data.houses;
+			self.data = searchgetdata.loadAllhouses(self.query);	
 			self.filterVisibility = false;
 			self.filters = [{ id: 1, label: "HasWords"}, { id: 2, label: "HasTitles"}, { id: 3, label: "HasAncestoralWeapons"}, { id: 4, label: "HasDiedOut"}];
 			self.filter = [];
 		} else {
 
 		};
+	}
+
+	self.search = function() {
+		let counter = 0;
+		if (self.action === "Characters") {
+			self.filter.forEach(function(filter){
+				if (filter.id === 1) {
+					counter++;
+					self.query = self.query + "gender=male";
+				}else if (filter.id === 2) {
+					if (counter > 0) { self.query = self.query + "&gender=female"; counter++;} else { self.query = self.query + "gender=female"; counter++;	}
+				}else if (filter.id === 3) {
+					if (counter > 0) { self.query = self.query + "&isAlive=true";} else { self.query = self.query + "isAlive=true"}
+				}
+			});
+
+			self.data = searchgetdata.loadAllcharacters(self.query);
+		}
+
+		if (self.action === "Houses") {
+			self.filter.forEach(function(filter){
+				if (filter.id === 1) {
+					counter++;
+					self.query = self.query + "hasWords=true";
+				}else if (filter.id === 2) {
+					if (counter > 0) { self.query = self.query + "&hasTitles=true"; counter++; } else { self.query = self.query + "hasTitles=true"; counter++; }
+				}else if (filter.id === 3) {
+					if (counter > 0) { self.query = self.query + "&hasAncestoralWeapons=true"; counter++;} else { self.query = self.query + "hasAncestoralWeapons=true"; counter++;}
+				}else if (filter.id === 4) {
+					if (counter > 0) { self.query = self.query + "&hasDiedOut=true"; counter++;} else { self.query = self.query + "hasDiedOut=true"; counter++;}
+				}
+			});
+			
+			self.data = searchgetdata.loadAllhouses(self.query);	
+		}
+
+
 	}
 
 
