@@ -50,6 +50,7 @@ body {
 
 #search {
 	background: url(../img/map.jpg);
+	min-height: 100vh;
 }
 
 #search #single-button {
