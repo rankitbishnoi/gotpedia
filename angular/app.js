@@ -1,1 +1,1 @@
-var myapp = angular.module("got",['ui.bootstrap','ui.router','angularjs-dropdown-multiselect']);
+var myapp = angular.module("got",['ui.bootstrap','ui.router','ngAnimate', 'ngSanitize','angularjs-dropdown-multiselect']);
