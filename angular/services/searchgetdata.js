@@ -25,14 +25,10 @@ myapp.service('searchgetdata', ['$http', function($http){
 
 	self.loadAllcharacters = function(query) {
 
-		var result;
-		var i = 0;
-
-		do{
+		for(let i = 1; i <= 214; i++){
 			$http.get('https://www.anapioficeandfire.com/api/characters?page='+i+'&pageSize=10'+query).then(function successCallback(response){
           // this callback will be called asynchronously
           // when the response is available
-          result = response; i++;
           if (response != []) {
           	response.data.forEach(function(character){ 
           		var obj = {
@@ -48,18 +44,15 @@ myapp.service('searchgetdata', ['$http', function($http){
           alert("some error occurred. Check the console.");
           console.log(response);
       })
-		} while( result != []);
+		}
 	};
 
 	self.loadAllhouses = function(query) {
-		var result;
-		var i = 0;
 
-		do{
+		for(let i = 1; i <= 45; i++){
 			$http.get('https://www.anapioficeandfire.com/api/houses?page='+i+'&pageSize=10'+query).then(function successCallback(response){
           // this callback will be called asynchronously
           // when the response is available
-          result = response; i++;
           if (response != []){
           	response.data.forEach(function(house){          	
           		var obj = {
@@ -75,6 +68,6 @@ myapp.service('searchgetdata', ['$http', function($http){
           alert("some error occurred. Check the console.");
           console.log(response);
       })
-		} while ( result != []);
+		}
 	};
 }])
