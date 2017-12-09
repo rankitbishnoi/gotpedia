@@ -42,7 +42,7 @@
 
 			</nav>
 			<div class="row">
-				<div class="col-12 col-md-3" ng-repeat= "result in mySearch.typeahead | filter: mySearch.selected | limitTo:10" id="thumbnail">
+				<div class="col-12 col-sm-6 col-md-3" ng-repeat= "result in mySearch.typeahead | filter: mySearch.selected | limitTo:10" id="thumbnail">
 					<a class="thumbnail" ng-click="$ctrl.open()">
 						<h5><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>{{result.name}} </h5>
 					</a>
