@@ -23,7 +23,9 @@
 		</nav>
 		<div class="row">
 			<div class="col-12 col-md-3" ng-repeat= "result in mySearch.typeahead | filter: mySearch.selected | limitTo:10">
-				<p>{{result.name}} </p>
+				<a href="#" class="thumbnail">
+					<h5>{{result.name}} </h5>
+				</a>
 			</div>
 			
 		</div>
