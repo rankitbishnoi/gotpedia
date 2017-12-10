@@ -13,7 +13,7 @@ myapp.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $
         })
 
         .state('search', {
-            url: '/search/:q',
+            url: '/search/:q/:u',
             templateUrl: 'angular/view/search.html',
             controller: 'searchController',
             controllerAs: 'mySearch'

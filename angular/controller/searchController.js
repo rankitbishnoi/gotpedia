@@ -1,6 +1,5 @@
-myapp.controller('searchController',["$stateParams",'searchgetdata', function($stateParams,searchgetdata){
+myapp.controller('searchController',['searchgetdata', function($stateParams,searchgetdata){
 	var self = this;
-	self.input = $stateParams.q;	
 	self.query = "&";
 
 
