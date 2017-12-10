@@ -1,10 +1,13 @@
-myapp.controller('ModaldCtrl', function ($uibModal, $log, $document) {
+myapp.controller('ModaldCtrl',['fetchsingledata', function (fetchsingledata,$uibModal, $log, $document) {
   var $ctrl = this;
   $ctrl.items = ['item1', 'item2', 'item3'];
+  $ctrl.data = {};
+
 
   $ctrl.animationsEnabled = true;
 
-  $ctrl.open = function (size, parentSelector) {
+  $ctrl.open = function (baseurl,urltype,size, parentSelector) {
+    $ctrl.data = fetchsingledata.loadData(baseurl,urltype);
     var parentElem = parentSelector ? 
       angular.element($document[0].querySelector('.modal-d ' + parentSelector)) : undefined;
     var modalInstance = $uibModal.open({
@@ -47,7 +50,7 @@ myapp.controller('ModaldCtrl', function ($uibModal, $log, $document) {
       $log.info('modal-component dismissed at: ' + new Date());
     });
   };
-});
+}]);
 
 // Please note that $uibModalInstance represents a modal window (instance) dependency.
 // It is not the same as the $uibModal service used above.

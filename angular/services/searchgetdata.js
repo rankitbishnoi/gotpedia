@@ -31,7 +31,7 @@ myapp.service('searchgetdata', ['$http', function($http){
 			$http.get('https://www.anapioficeandfire.com/api/characters?page='+i+'&pageSize=10'+query).then(function successCallback(response){
           // this callback will be called asynchronously
           // when the response is available
-          if (response != []) {
+          if (response.data != []) {
           	response.data.forEach(function(character){ 
           		var obj = {
           			"url" : character.url,
@@ -57,7 +57,7 @@ myapp.service('searchgetdata', ['$http', function($http){
 			$http.get('https://www.anapioficeandfire.com/api/houses?page='+i+'&pageSize=10'+query).then(function successCallback(response){
           // this callback will be called asynchronously
           // when the response is available
-          if (response != []){
+          if (response.data != []){
           	response.data.forEach(function(house){          	
           		var obj = {
           			"url" : house.url,
