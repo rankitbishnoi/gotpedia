@@ -10,7 +10,7 @@ myapp.controller('ModaldCtrl',['fetchsingledata','$uibModal','$log','$document',
       animation: $ctrl.animationsEnabled,
       ariaLabelledBy: 'modal-title-bottom',
       ariaDescribedBy: 'modal-body-bottom',
-      templateUrl: 'stackedModal.html',
+      templateUrl: 'myModalContent.html',
       size: 'sm',
       controller: function($scope) {
         $scope.item = fetchsingledata.loadData(baseurl,urltype); console.log($scope.items);  
