@@ -1,13 +1,12 @@
 myapp.controller('ModaldCtrl',['fetchsingledata','$uibModal','$log','$document', function (fetchsingledata,$uibModal, $log, $document) {
   var $ctrl = this;
-  $ctrl.data = {};
-  $ctrl.items = $ctrl.data;
+  $ctrl.items = {};
 
 
   $ctrl.animationsEnabled = true;
 
   $ctrl.open = function (baseurl,urltype,size, parentSelector) {
-    $ctrl.data = fetchsingledata.loadData(baseurl,urltype); console.log($ctrl.data);
+    $ctrl.items = fetchsingledata.loadData(baseurl,urltype); console.log($ctrl.data);
     var parentElem = parentSelector ? 
       angular.element($document[0].querySelector('.modal-d ' + parentSelector)) : undefined;
     var modalInstance = $uibModal.open({
