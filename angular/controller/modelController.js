@@ -1,6 +1,5 @@
 myapp.controller('ModaldCtrl',['fetchsingledata','$uibModal','$log','$document', function (fetchsingledata,$uibModal, $log, $document) {
   var $ctrl = this;
-  $ctrl.item = {};
 
 
   $ctrl.animationsEnabled = true;
@@ -10,7 +9,7 @@ myapp.controller('ModaldCtrl',['fetchsingledata','$uibModal','$log','$document',
     fetchsingledata.setdata($ctrl.item);
   }
 
-  $ctrl.open = function (baseurl,urltype,size, parentSelector) {
+  $ctrl.open = function (size, parentSelector) {
     $uibModal.open({
       animation: $ctrl.animationsEnabled,
       ariaLabelledBy: 'modal-title-bottom',
