@@ -21,6 +21,10 @@ myapp.controller('ModaldCtrl',['fetchsingledata','$uibModal','$log','$document',
         $scope.ok = function () {
           $uibModalInstance.close();
         };
+        $scope.arrayhide = function(value){
+          var x = Array.isArray(value);
+          return x;
+        }
       }
     });
 
