@@ -3,7 +3,7 @@
 		<h2>Explore to your desires</h2>
 		<h3>Find your favorite house or Character.</h3>		
 		<div class="input-group" uib-dropdown id="btn-group">
-			<input type="text" placeholder="Search" ng-model="myHome.selected" uib-typeahead="result as result.name for result in myHome.search | filter:$viewValue | limitTo:5" class="form-control" id="searchInput"> 
+			<input type="search" placeholder="Search" ng-model="myHome.selected" uib-typeahead="result as result.name for result in myHome.search | filter:$viewValue | limitTo:5" class="form-control" id="searchInput"> 
 			<div class="input-group-btn" uib-dropdown is-open="status.isopen">
 				<button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
 					{{myHome.action}} <span class="caret"></span>
