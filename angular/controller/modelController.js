@@ -18,13 +18,12 @@ myapp.controller('ModaldCtrl',['fetchsingledata','$uibModal','$log','$document',
       size: 'lg',
       controller: function($scope,fetchsingledata) {
         $scope.item = fetchsingledata.getdata();
+        $scope.ok = function () {
+          $uibModalInstance.close();
+        };
       }
     });
 
-  };
-
-  $ctrl.ok = function () {
-    $uibModalInstance.close();
   };
 
 }]);
