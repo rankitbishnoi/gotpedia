@@ -6,7 +6,7 @@ myapp.controller('ModaldCtrl',['fetchsingledata','$uibModal','$log','$document',
   $ctrl.animationsEnabled = true;
 
   $ctrl.fetchdata = function (baseurl,urltype) {
-    $ctrl.item = fetchsingledata.loadData(baseurl,urltype); console.log($ctrl.item);
+    $ctrl.item = fetchsingledata.loadData(baseurl,urltype);
     fetchsingledata.setdata($ctrl.item);
   }
 
