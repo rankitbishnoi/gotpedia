@@ -115,7 +115,7 @@ self.setdata = function(dataset){
 }
 
 self.getdata = function() {
-	return dataset;
+	return self.dataset;
 }
 
 }])
