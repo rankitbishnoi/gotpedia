@@ -1,13 +1,6 @@
-myapp.controller('ModaldCtrl',["$stateParams",'fetchsingledata','$uibModal','$log','$document', '$rootScope', function ($stateParams,fetchsingledata,$uibModal, $log, $document, $rootScope) {
+myapp.controller('ModaldCtrl',['fetchsingledata','$uibModal','$log','$document', function (fetchsingledata,$uibModal, $log, $document) {
   var $ctrl = this;
-  self.inputurl = $stateParams.q;
-  self.inputurltype = $stateParams.u; 
 
-
-  $rootScope.$on("Callmodalopen", function(){
-    $ctrl.fetchdata(self.inputurl, self.inputurltype);
-    $ctrl.open();
-  });
 
 
   $ctrl.animationsEnabled = true;

@@ -13,12 +13,9 @@ myapp.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $
         })
 
         .state('search', {
-            url: '/search/:q/:u',
+            url: '/search/:q',
             templateUrl: 'angular/view/search.html',
             controller: 'searchController',
-            controllerAs: 'mySearch',
-            onEnter: function($rootScope){
-                $rootScope.$broadcast("Callmodalopen", {});
-            }
+            controllerAs: 'mySearch'
     })
     }]);

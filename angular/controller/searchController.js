@@ -1,11 +1,12 @@
-myapp.controller('searchController',['searchgetdata', function(searchgetdata){
+myapp.controller('searchController',["$stateParams", 'searchgetdata', function($stateParams, searchgetdata){
 	var self = this;
+	self.input = $stateParams.q;
 	self.query = "&";
 
 
 	self.action = "Books";
 	self.data = searchgetdata.loadAllbooks();
-	self.selected = undefined;
+	self.selected = self.input;
 	self.typeahead = self.data;
 	self.filterVisibility = true;
 	self.filter = [];
