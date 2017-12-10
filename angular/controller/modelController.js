@@ -1,7 +1,7 @@
 myapp.controller('ModaldCtrl',['fetchsingledata','$uibModal','$log','$document', function (fetchsingledata,$uibModal, $log, $document) {
   var $ctrl = this;
   $ctrl.items = ['item1', 'item2', 'item3'];
-  $ctrl.data = {};
+  $ctrl.data = { name : "mine"};
 
 
   $ctrl.animationsEnabled = true;
