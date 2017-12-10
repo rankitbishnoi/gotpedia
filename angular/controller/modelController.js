@@ -20,8 +20,6 @@ myapp.controller('ModaldCtrl',['fetchsingledata','$uibModal','$log','$document',
       controller: function($scope,fetchsingledata) {
         $scope.item = fetchsingledata.getdata();  console.log($scope.item);
       }
-
-      }
     });
 
   };
