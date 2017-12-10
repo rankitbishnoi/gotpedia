@@ -1,4 +1,4 @@
-myapp.controller('searchController',['searchgetdata', function($stateParams,searchgetdata){
+myapp.controller('searchController',['searchgetdata', function(searchgetdata){
 	var self = this;
 	self.query = "&";
 
