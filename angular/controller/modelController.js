@@ -6,7 +6,7 @@ myapp.controller('ModaldCtrl',['fetchsingledata','$uibModal','$log','$document',
   $ctrl.animationsEnabled = true;
 
   $ctrl.fetchdata = function (baseurl,urltype) {
-    $ctrl.item = fetchsingledata.loadData(baseurl,urltype); console.log($scope.item);
+    $ctrl.item = fetchsingledata.loadData(baseurl,urltype); console.log($ctrl.item);
   }
 
   $ctrl.open = function (baseurl,urltype,size, parentSelector) {
@@ -17,7 +17,7 @@ myapp.controller('ModaldCtrl',['fetchsingledata','$uibModal','$log','$document',
       templateUrl: 'myModalContent.html',
       size: 'sm',
       controller: function($scope) {
-        $scope.item = $ctrl.item;  
+        $scope.item = $ctrl.item;  console.log($scope.item);
 
       }
     });
