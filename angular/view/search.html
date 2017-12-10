@@ -2,12 +2,12 @@
 	<div ng-controller="ModaldCtrl as $ctrl" class="modal-d">
 		<script type="text/ng-template" id="myModalContent.html">
 			<div class="modal-header">
-				<h3 class="modal-title" id="modal-title">{{item.name}} </h3>
+				<h3 class="modal-title" id="modal-title">{{item.Name}} </h3>
 			</div>
 			<div class="modal-body" id="modal-body">
-				<ul>
-					<li ng-repeat="(key, value) in item" ng-show=value>
-						<h6>{{key}} <span><p>{{value}} </p></span></h6>
+				<ul>                    
+					<li ng-repeat="(key, value) in item" ng-show=value ng-hide="key === 'Name'">
+						<h6><strong>{{key}}</strong> :<span>{{value}}</span></h6>
 					</li>
 				</ul>
 			</div>
