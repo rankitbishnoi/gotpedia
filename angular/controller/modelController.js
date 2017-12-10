@@ -6,7 +6,6 @@ myapp.controller('ModaldCtrl',['fetchsingledata','$uibModal','$log','$document',
   $ctrl.animationsEnabled = true;
 
   $ctrl.open = function (baseurl,urltype,size, parentSelector) {
-    $ctrl.items = fetchsingledata.loadData(baseurl,urltype); console.log($ctrl.data);
     var parentElem = parentSelector ? 
       angular.element($document[0].querySelector('.modal-d ' + parentSelector)) : undefined;
     var modalInstance = $uibModal.open({
@@ -14,8 +13,9 @@ myapp.controller('ModaldCtrl',['fetchsingledata','$uibModal','$log','$document',
       ariaLabelledBy: 'modal-title',
       ariaDescribedBy: 'modal-body',
       templateUrl: 'myModalContent.html',
-      controller: 'ModalInstanceCtrl',
-      controllerAs: '$ctrl',
+      controller: function($scope) {
+        $scope.items = fetchsingledata.loadData(baseurl,urltype); console.log($scope.items);  
+      },
       size: size,
       appendTo: parentElem,
       resolve: {
@@ -33,22 +33,3 @@ myapp.controller('ModaldCtrl',['fetchsingledata','$uibModal','$log','$document',
   };
 
 }]);
-
-// Please note that $uibModalInstance represents a modal window (instance) dependency.
-// It is not the same as the $uibModal service used above.
-
-myapp.controller('ModalInstanceCtrl', function ($uibModalInstance, items) {
-  var $ctrl = this;
-  $ctrl.items = items;
-  $ctrl.selected = {
-    item: $ctrl.items[0]
-  };
-
-  $ctrl.ok = function () {
-    $uibModalInstance.close($ctrl.selected.item);
-  };
-
-  $ctrl.cancel = function () {
-    $uibModalInstance.dismiss('cancel');
-  };
-});
