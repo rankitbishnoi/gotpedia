@@ -26,7 +26,7 @@ myapp.controller('ModaldCtrl',['fetchsingledata','$uibModal','$log','$document',
           return x;
         }
         $scope.valuehide = function(value){
-          var x = (value == null || value == undefined);
+          var x = (value == null || value == undefined || value == "" || value == []);
           return x;
         }
       }
