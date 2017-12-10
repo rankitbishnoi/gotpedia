@@ -7,7 +7,7 @@ myapp.controller('ModaldCtrl',['fetchsingledata','$uibModal','$log','$document',
   $ctrl.animationsEnabled = true;
 
   $ctrl.open = function (baseurl,urltype,size, parentSelector) {
-    $ctrl.data = fetchsingledata.loadData(baseurl,urltype);
+    $ctrl.data = fetchsingledata.loadData(baseurl,urltype); console.log($ctrl.data);
     var parentElem = parentSelector ? 
       angular.element($document[0].querySelector('.modal-d ' + parentSelector)) : undefined;
     var modalInstance = $uibModal.open({
