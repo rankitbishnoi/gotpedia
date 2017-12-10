@@ -7,6 +7,7 @@ myapp.controller('ModaldCtrl',['fetchsingledata','$uibModal','$log','$document',
 
   $ctrl.fetchdata = function (baseurl,urltype) {
     $ctrl.item = fetchsingledata.loadData(baseurl,urltype); console.log($ctrl.item);
+    fetchsingledata.setdata($ctrl.item);
   }
 
   $ctrl.open = function (baseurl,urltype,size, parentSelector) {
@@ -16,8 +17,9 @@ myapp.controller('ModaldCtrl',['fetchsingledata','$uibModal','$log','$document',
       ariaDescribedBy: 'modal-body-bottom',
       templateUrl: 'myModalContent.html',
       size: 'sm',
-      controller: function($scope) {
-        $scope.item = $ctrl.item;  console.log($scope.item);
+      controller: function($scope,fetchsingledata) {
+        $scope.item = fetchsingledata.getdata();  console.log($scope.item);
+      }
 
       }
     });

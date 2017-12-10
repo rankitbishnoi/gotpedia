@@ -1,5 +1,6 @@
 myapp.service('fetchsingledata', ['$http', function($http){
 	var self = this;
+	self.dataset = {};
 
 	self.loadData = function(baseurl,type) {
 		var obj = {};
@@ -107,6 +108,14 @@ myapp.service('fetchsingledata', ['$http', function($http){
 
 return obj;
 
+}
+
+self.setdata = function(dataset){
+	self.dataset = dataset;
+}
+
+self.getdata = function() {
+	return dataset;
 }
 
 }])
