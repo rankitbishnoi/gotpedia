@@ -1,4 +1,4 @@
-myapp.controller('ModaldCtrl',["$stateParams",'fetchsingledata','$uibModal','$log','$document', function (fetchsingledata,$uibModal, $log, $document) {
+myapp.controller('ModaldCtrl',["$stateParams",'fetchsingledata','$uibModal','$log','$document', function ($stateParams,fetchsingledata,$uibModal, $log, $document) {
   var $ctrl = this;
   self.inputurl = $stateParams.q;
   self.inputurltype = $stateParams.u; 
