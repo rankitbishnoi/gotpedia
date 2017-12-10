@@ -1,4 +1,4 @@
-myapp.controller('ModaldCtrl',['fetchsingledata', function (fetchsingledata,$uibModal, $log, $document) {
+myapp.controller('ModaldCtrl',['fetchsingledata','$uibModal','$log','$document', function (fetchsingledata,$uibModal, $log, $document) {
   var $ctrl = this;
   $ctrl.items = ['item1', 'item2', 'item3'];
   $ctrl.data = {};
