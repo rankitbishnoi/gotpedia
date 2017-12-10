@@ -16,7 +16,7 @@ myapp.controller('ModaldCtrl',['fetchsingledata','$uibModal','$log','$document',
       ariaDescribedBy: 'modal-body-bottom',
       templateUrl: 'myModalContent.html',
       size: 'lg',
-      controller: function($scope,fetchsingledata) {
+      controller: function($scope,fetchsingledata,$uibModalInstance) {
         $scope.item = fetchsingledata.getdata();
         $scope.ok = function () {
           $uibModalInstance.close();
