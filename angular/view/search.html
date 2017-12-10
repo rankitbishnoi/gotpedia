@@ -7,8 +7,8 @@
 			<div class="modal-body" id="modal-body">
 				<ul>                    
 					<li ng-repeat="(key, value) in item" ng-show=value ng-hide="key === 'Name'">
-						<h6 ng-hide="key === 'Books' || key === 'Characters' || key === 'Swornmembers'"><strong>{{key}}</strong> :<span>{{value}}</span></h6>
-						<h6 ng-if="key === 'Books' || key === 'Characters' || key === 'Swornmembers'" ng-init="limit = 5"><strong>{{strong}} </strong> : <span ng-repeat="singlevalue in value | limitTo: limit as results">{{singlevalue}}</span><a ng-hide="results.length === value.length" ng-click="limit = limit +2">show more...</a>
+						<h6 ng-hide="Array.isArray(value)"><strong>{{key}}</strong> :<span>{{value}}</span></h6>
+						<h6 ng-if="Array.isArray(value)" ng-init="limit = 5"><strong>{{key}} </strong> : <span ng-repeat="singlevalue in value | limitTo: limit as results"> {{singlevalue}},</span><a ng-hide="results.length === value.length" ng-click="limit = limit +2">show more...</a>
 					</li>
 				</ul>
 			</div>
