@@ -1,9 +1,13 @@
 myapp.controller('ModaldCtrl',['fetchsingledata','$uibModal','$log','$document', function (fetchsingledata,$uibModal, $log, $document) {
   var $ctrl = this;
-  $ctrl.items = {};
+  $ctrl.item = {};
 
 
   $ctrl.animationsEnabled = true;
+
+  $ctrl.fetchdata = function (baseurl,urltype) {
+    $ctrl.item = fetchsingledata.loadData(baseurl,urltype); console.log($scope.item);
+  }
 
   $ctrl.open = function (baseurl,urltype,size, parentSelector) {
     $uibModal.open({
@@ -13,15 +17,15 @@ myapp.controller('ModaldCtrl',['fetchsingledata','$uibModal','$log','$document',
       templateUrl: 'myModalContent.html',
       size: 'sm',
       controller: function($scope) {
-        $scope.item = fetchsingledata.loadData(baseurl,urltype); console.log($scope.items);  
+        $scope.item = $ctrl.item;  
+
       }
     });
 
-    modalInstance.result.then(function (selectedItem) {
-      $ctrl.selected = selectedItem;
-    }, function () {
-      $log.info('Modal dismissed at: ' + new Date());
-    });
+  };
+
+  $ctrl.ok = function () {
+    $uibModalInstance.close();
   };
 
 }]);
