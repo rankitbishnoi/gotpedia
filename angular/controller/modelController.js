@@ -18,7 +18,7 @@ myapp.controller('ModaldCtrl',['fetchsingledata','$uibModal','$log','$document',
       templateUrl: 'myModalContent.html',
       size: 'sm',
       controller: function($scope,fetchsingledata) {
-        $scope.item = fetchsingledata.getdata();  console.log($scope.item);
+        $scope.item = fetchsingledata.getdata();  console.log($scope.item); console.log(fetchsingledata.getdata());
       }
     });
 
