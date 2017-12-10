@@ -6,7 +6,7 @@
 			</div>
 			<div class="modal-body" id="modal-body">
 				<ul>                    
-					<li ng-repeat="(key, value) in item" ng-show=value ng-hide="key === 'Name'">
+					<li ng-repeat="(key, value) in item" ng-show=value ng-hide="key === 'Name' || valuehide(value)">
 						<h6 ng-hide="arrayhide(value)"><strong>{{key}}</strong> :<span>{{value}}</span></h6>
 						<h6 ng-if="arrayhide(value)" ng-init="limit = 5"><strong>{{key}} </strong> : <span ng-repeat="singlevalue in value | limitTo: limit as results"> {{singlevalue}},</span><a ng-hide="results.length === value.length" ng-click="limit = limit +5">show more...</a>
 					</li>

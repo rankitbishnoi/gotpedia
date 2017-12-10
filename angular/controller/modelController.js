@@ -25,6 +25,10 @@ myapp.controller('ModaldCtrl',['fetchsingledata','$uibModal','$log','$document',
           var x = Array.isArray(value);
           return x;
         }
+        $scope.valuehide = function(value){
+          var x = (value == null || value == undefined);
+          return x;
+        }
       }
     });
 
