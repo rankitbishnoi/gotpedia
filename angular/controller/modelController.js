@@ -1,7 +1,6 @@
 myapp.controller('ModaldCtrl',['fetchsingledata','$uibModal','$log','$document', function (fetchsingledata,$uibModal, $log, $document) {
   var $ctrl = this;
-  $ctrl.items = ['item1', 'item2', 'item3'];
-  $ctrl.data = { name : "mine"};
+  $ctrl.data = {};
 
 
   $ctrl.animationsEnabled = true;
@@ -33,23 +32,6 @@ myapp.controller('ModaldCtrl',['fetchsingledata','$uibModal','$log','$document',
     });
   };
 
-  $ctrl.openComponentModal = function () {
-    var modalInstance = $uibModal.open({
-      animation: $ctrl.animationsEnabled,
-      component: 'modalComponent',
-      resolve: {
-        items: function () {
-          return $ctrl.items;
-        }
-      }
-    });
-
-    modalInstance.result.then(function (selectedItem) {
-      $ctrl.selected = selectedItem;
-    }, function () {
-      $log.info('modal-component dismissed at: ' + new Date());
-    });
-  };
 }]);
 
 // Please note that $uibModalInstance represents a modal window (instance) dependency.
@@ -58,44 +40,8 @@ myapp.controller('ModaldCtrl',['fetchsingledata','$uibModal','$log','$document',
 myapp.controller('ModalInstanceCtrl', function ($uibModalInstance, items) {
   var $ctrl = this;
   $ctrl.items = items;
-  $ctrl.selected = {
-    item: $ctrl.items[0]
-  };
 
   $ctrl.ok = function () {
     $uibModalInstance.close($ctrl.selected.item);
   };
-
-  $ctrl.cancel = function () {
-    $uibModalInstance.dismiss('cancel');
-  };
-});
-
-// Please note that the close and dismiss bindings are from $uibModalInstance.
-
-myapp.component('modalComponent', {
-  templateUrl: 'myModalContent.html',
-  bindings: {
-    resolve: '<',
-    close: '&',
-    dismiss: '&'
-  },
-  controller: function () {
-    var $ctrl = this;
-
-    $ctrl.$onInit = function () {
-      $ctrl.items = $ctrl.resolve.items;
-      $ctrl.selected = {
-        item: $ctrl.items[0]
-      };
-    };
-
-    $ctrl.ok = function () {
-      $ctrl.close({$value: $ctrl.selected.item});
-    };
-
-    $ctrl.cancel = function () {
-      $ctrl.dismiss({$value: 'cancel'});
-    };
-  }
 });
