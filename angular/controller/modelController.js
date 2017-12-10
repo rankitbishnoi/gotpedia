@@ -1,6 +1,7 @@
 myapp.controller('ModaldCtrl',['fetchsingledata','$uibModal','$log','$document', function (fetchsingledata,$uibModal, $log, $document) {
   var $ctrl = this;
   $ctrl.data = {};
+  $ctrl.items = $ctrl.data;
 
 
   $ctrl.animationsEnabled = true;
@@ -40,8 +41,15 @@ myapp.controller('ModaldCtrl',['fetchsingledata','$uibModal','$log','$document',
 myapp.controller('ModalInstanceCtrl', function ($uibModalInstance, items) {
   var $ctrl = this;
   $ctrl.items = items;
+  $ctrl.selected = {
+    item: $ctrl.items[0]
+  };
 
   $ctrl.ok = function () {
     $uibModalInstance.close($ctrl.selected.item);
+  };
+
+  $ctrl.cancel = function () {
+    $uibModalInstance.dismiss('cancel');
   };
 });
