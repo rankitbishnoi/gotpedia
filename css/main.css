@@ -1,5 +1,7 @@
 body {
 	background-color: black;
+	background: url(../img/nav.jpg);
+	background-repeat: no-repeat;
 }
 
 .navbar-default {
