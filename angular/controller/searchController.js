@@ -6,7 +6,6 @@ myapp.controller('searchController',["$stateParams", 'searchgetdata', function($
 
 
 	self.action = self.inputtype; // model to define the type of data fetched from server, initally bound to the type provided by home state
-	self.buttonName(self.action); // to set variables for fetching the data using service to perform typeahead function on the base of "self.action"
 	self.selected = self.input; // model to bind the seleted value of search input, initially bound to the input came through query parameter in url
 	self.typeahead = self.data; //variable to use in typeahead functionality of search bar
 	self.filterVisibility = true; // variable used to show and hide the filter selector, as it is not used in books section
@@ -38,6 +37,8 @@ myapp.controller('searchController',["$stateParams", 'searchgetdata', function($
 
 		};
 	}
+	
+	self.buttonName(self.action); // to set variables for fetching the data using service to perform typeahead function on the base of "self.action"
 
 	self.search = function() { // function to define the "self.query" on the basis of filter choosen by the user and than fetch the data from server.
 		let counter = 0;
