@@ -32,8 +32,13 @@ myapp.service('fetchsingledata', ['$http', function($http){
           			obj.Overlord = response.data.name;
           		});
           	}
-          	obj.Founded = response.data.founded;
-          	obj.Founder = response.data.founder;
+          	obj.Founded = response.data.founded;;
+          	if (response.data.founder === "") { obj.Founder = ""; }else  //  condition to stop performing $http request if the particular responce entry have not provided an url
+          	{
+          		$http.get(response.data.founder).then(function successCallback(response){    // to convert the data provide y server in url form into the name
+          			obj.Founder = response.data.name;
+          		});
+          	}
           	obj.DiedOut = response.data.diedOut;
           	obj.AncestralWeapons = response.data.ancestralWeapons;
           	obj.SwornMembers = [];
