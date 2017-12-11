@@ -1,11 +1,12 @@
 myapp.controller('searchController',["$stateParams", 'searchgetdata', function($stateParams, searchgetdata){
 	var self = this;
 	self.input = $stateParams.q; // to get the value passed on by the query parameter in url
+	self.inputtype = $stateParams.u   // to get the value type passed on by the qyery parameter in url
 	self.query = "&"; // variable used to add the additional filters in url while fetching the single data for modals
 
 
-	self.action = "Books"; // model to define the type of data fetched from server, initially bound to books
-	self.data = searchgetdata.loadAllbooks(); // fetching the data using service to perform typeahead function on the base of "self.action"
+	self.action = self.inputtype; // model to define the type of data fetched from server, initally bound to the type provided by home state
+	self.buttonName(); // to set variables for fetching the data using service to perform typeahead function on the base of "self.action"
 	self.selected = self.input; // model to bind the seleted value of search input, initially bound to the input came through query parameter in url
 	self.typeahead = self.data; //variable to use in typeahead functionality of search bar
 	self.filterVisibility = true; // variable used to show and hide the filter selector, as it is not used in books section
