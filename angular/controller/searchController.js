@@ -1,20 +1,20 @@
 myapp.controller('searchController',["$stateParams", 'searchgetdata', function($stateParams, searchgetdata){
 	var self = this;
-	self.input = $stateParams.q;
-	self.query = "&";
+	self.input = $stateParams.q; // to get the value passed on by the query parameter in url
+	self.query = "&"; // variable used to add the additional filters in url while fetching the single data for modals
 
 
-	self.action = "Books";
-	self.data = searchgetdata.loadAllbooks();
-	self.selected = self.input;
-	self.typeahead = self.data;
-	self.filterVisibility = true;
+	self.action = "Books"; // model to define the type of data fetched from server, initially bound to books
+	self.data = searchgetdata.loadAllbooks(); // fetching the data using service to perform typeahead function on the base of "self.action"
+	self.selected = self.input; // model to bind the seleted value of search input, initially bound to the input came through query parameter in url
+	self.typeahead = self.data; //variable to use in typeahead functionality of search bar
+	self.filterVisibility = true; // variable used to show and hide the filter selector, as it is not used in books section
 	self.filter = [];
 
-	self.Filtersettings = { checkBoxes: true, };
+	self.Filtersettings = { checkBoxes: true, }; // to select multiple filters , here the functionality of angularjs-dropdown-multiselect liberary is used
 
 
-	self.buttonName = function(name) {
+	self.buttonName = function(name) { // function to change the filters and loaded data on the basis of "self.action" specified by user.
 		self.action = name;
 		if (name === "Books") {					
 			self.data = searchgetdata.loadAllbooks();
@@ -38,7 +38,7 @@ myapp.controller('searchController',["$stateParams", 'searchgetdata', function($
 		};
 	}
 
-	self.search = function() {
+	self.search = function() { // function to define the "self.query" on the basis of filter choosen by the user and than fetch the data from server.
 		let counter = 0;
 		if (self.action === "Characters") {
 			self.filter.forEach(function(filter){
@@ -79,7 +79,7 @@ myapp.controller('searchController',["$stateParams", 'searchgetdata', function($
 
 
 
-	self.status = {
+	self.status = {   // ui-bootstrap is used to make the button dropdowns functional
 		isopen: false
 	};
 

@@ -1,6 +1,6 @@
-myapp.service('getdata', ['$http', function($http){
-	var self = this;
-	self.data = {
+myapp.service('getdata', ['$http', function($http){ // this service perform same functionality as searchgetdata service of fetching data from server to use in typeahead functionality.
+	var self = this;                                // the only difference between the is that this service is used by home controller and no filter queries are there in that controller.
+	self.data = {                                    // so this service fetch the whole set of data of all the types without specifing any filter at all.
 		houses : [],
 		characters : [],
 		books : []

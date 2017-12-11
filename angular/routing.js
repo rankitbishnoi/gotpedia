@@ -11,9 +11,9 @@ myapp.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $
             controller: "homeController",
             controllerAs: 'myHome'
         })
-
+        // SEARCH STATE
         .state('search', {
-            url: '/search/:q',
+            url: '/search/:q', // query perameter if defined in the url
             templateUrl: 'angular/view/search.html',
             controller: 'searchController',
             controllerAs: 'mySearch'

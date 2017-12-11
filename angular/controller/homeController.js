@@ -1,11 +1,11 @@
 myapp.controller('homeController', ["getdata", function(getdata){
 	var self = this;
-	self.action = "Books";
-	self.data = getdata.load();
-	self.selected = undefined;
-	self.search = self.data.books;
+	self.action = "Books";               // model to bind the data type seleted by the user, initially bound to "books"
+	self.data = getdata.load();          // to load the data from server using the getdata service and use it to provide typeahead functionality
+	self.selected = undefined;             // model to bind the data selected by user after searching
+	self.search = self.data.books;           // to set the datatype for typeahead functionality
 
-	self.buttonName = function(name) {
+	self.buttonName = function(name) {     // to chnage the data type on the basis of user selection
 		self.action = name;
 		if (name === "Books") {		
 			self.search = self.data.books;
@@ -20,7 +20,7 @@ myapp.controller('homeController', ["getdata", function(getdata){
 
 
 
-	self.status = {
+	self.status = {                            // to provide the ui-bootstrap dropdown functionality in buttons
 		isopen: false
 	};
 
